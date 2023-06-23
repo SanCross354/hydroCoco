@@ -23,6 +23,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function pipa() {
+        return this->hasOne(Pipa::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

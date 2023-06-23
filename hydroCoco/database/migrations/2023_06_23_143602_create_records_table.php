@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pipas', function (Blueprint $table) {
+        Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->string('lokasi')->unique();
-            $table->unsignedBigInteger('idOperator');
-            $table->foreign('idOperator')->references('id')->on('users');
+            // $table->unsignedBigInteger('idOperator');
+            $table->unsignedBigInteger('idPipa');
+            $table->float('pH');
+            $table->integer('debit');
+            $table->integer('tekanan');
+            $table->dateTime('waktu');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pipas');
+        Schema::dropIfExists('records');
     }
 };
