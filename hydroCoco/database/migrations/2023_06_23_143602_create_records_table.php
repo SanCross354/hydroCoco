@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('debit');
             $table->integer('tekanan');
             $table->dateTime('waktu');
+            $table->foreign('idPipa')->references('id')->on('pipas');
             $table->timestamps();
         });
     }

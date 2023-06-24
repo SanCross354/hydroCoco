@@ -15,6 +15,10 @@ class Pipa extends Model
         return this->belongsTo(User::class);
     }
 
+    public function record() {
+        return this->hasMany(Record::class);
+    }
+
     // public function record() {
     //     return this->belongsTo(Record::class);
     // }
