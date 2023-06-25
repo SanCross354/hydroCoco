@@ -4,7 +4,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Pipa;
-
+use App\Models\User;
 
 class PipaFactory extends Factory
 {
@@ -22,9 +22,13 @@ class PipaFactory extends Factory
      */
     public function definition()
     {
-        //Make data faker of LOCATION and idOPERATOR have UNIQUE value (tidak ada duiplikasi)
+        //Take value from User table 
+        $operator = User::count();
+
         $lokasi = $this->faker->unique()->city();
-        $idOperator = $this->faker->unique()->numberBetween(1, 5);
+
+        //Make sure if the idOperator not geeting duplicated and take the value from User Table
+        $idOperator = $this->faker->unique()->numberBetween(1, $operator);  
 
         return [
             'lokasi' => $lokasi,
@@ -32,4 +36,3 @@ class PipaFactory extends Factory
         ];
     }
 }
-
