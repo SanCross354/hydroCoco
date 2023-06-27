@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Pipa;
+use App\Models\Record;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Record>
@@ -16,17 +18,24 @@ class RecordFactory extends Factory
      */
     public function definition(): array
     {
-        $record = Record::all();
-        $idPipa = $this->faker->unique()->numberBetween(1, $record);
+        $record = Pipa::count();
+        $idPipa = $this->faker->numberBetween(1, $record);
 
         //Explanation : $faker->randomFloat($nbMaxDecimals, $min, $max);
-        $pH = $this->fake()->randomFloat(1,6,8);
+        $pH = $this->faker->randomFloat(2,6,8);
+        $debit = $this->faker->randomNumber(5,8);
+        $waktu = $this->faker->dateTime()->format('Y-m-d H:i:s');
+        $tekanan = $this->faker->randomNumber(2, 5);
 
-        $tekanan = $this->fake()->randomNumber(2,5);
         
 
+
         return [
-            'idPipa' => $idPipa
+            'idPipa' => $idPipa,
+            'Ph' => $pH,
+            'debit' => $debit,
+            'waktu' => $waktu,
+            'tekanan' => $tekanan
         ];
     }
 }

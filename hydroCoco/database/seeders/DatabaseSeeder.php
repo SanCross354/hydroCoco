@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(5)->create();
         \App\Models\Pipa::factory(5)->create();
+        \App\Models\Record::factory(20)->create();
 
         // $max = 6;
         // for($c=1; $c<=$max; $c++) {
