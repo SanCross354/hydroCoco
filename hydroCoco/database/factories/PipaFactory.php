@@ -28,7 +28,7 @@ class PipaFactory extends Factory
         $lokasi = $this->faker->unique()->city();
 
         //Make sure if the idOperator not geeting duplicated and take the value from User Table
-        $idOperator = $this->faker->unique()->numberBetween(1, $operator);  
+        $idOperator = $this->faker->unique()->numberBetween(1, $operator);
 
         return [
             'lokasi' => $lokasi,
