@@ -61,10 +61,10 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">    
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    id
+                    No
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    idPipa
+                    lokasi
                 </th>
                 <th scope="col" class="px-6 py-3">
                     pH
@@ -78,9 +78,6 @@
                 <th scope="col" class="px-6 py-3">
                     waktu
                 </th>
-                <th scope="col" class="px-6 py-3">
-                    <span class="sr-only">Edit</span>
-                </th>
             </tr>
         </thead>
         <tbody>
@@ -90,7 +87,7 @@
                     {{$record->id}}
                 </th>
                 <td class="px-6 py-4">
-                    {{$record->idPipa}}
+                    {{$record->pipa->lokasi}}
                 </td>
                 <td class="px-6 py-4">
                     {{$record->pH}}
@@ -103,9 +100,6 @@
                 </td>
                 <td class="px-6 py-4">
                     {{$record->waktu}}
-                </td>
-                <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                 </td>
             </tr>
         @endforeach

@@ -51,6 +51,6 @@ Route::get('/watermeter', [WaterMeterController::class, 'index']);
 Route::get('/valve', function () {
     return view('valve', [
         'nama' => 'Valve Controller',
-        'valve' => Pipa::all()
+        'valves' => Pipa::with(['user'])->get()
     ]);
 });

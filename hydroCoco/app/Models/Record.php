@@ -13,6 +13,6 @@ class Record extends Model
     protected $guarded = ['id'];
 
     public function pipa() {
-        return $this->belongsTo(Pipa::class);
+        return $this->belongsTo(Pipa::class, 'idPipa');
     }
 }
