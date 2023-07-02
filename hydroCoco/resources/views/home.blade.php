@@ -7,7 +7,6 @@ x-data="{ page: 'debit_air', 'loaded': true, 'darkMode': true, 'stickyMenu': fal
           $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
   :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
   
-  @include('partials.preloader')
   <div class="flex h-screen overflow-hidden">
   @include('partials.sidebar')
     <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">

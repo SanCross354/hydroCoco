@@ -7,10 +7,16 @@ export default {
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        '350': '350px'
+      }
+    },
   },
   plugins: [
     require('flowbite/plugin')
   ],
 }
+
+
 

@@ -3,7 +3,7 @@
 use App\Models\Record;
 use App\Models\Pipa;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WaterMeterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,11 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home', [
-        'title' => 'Wildan Blog'
-    ]);
-});
+// Route::get('/home', function () {
+//     return view('home', [
+//         'nama' => 'Wildan Blog'
+//     ]);
+// });
 
 Route::get('/login', function () {
     return view('login', [
@@ -33,16 +33,24 @@ Route::get('/login', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard', [
-        'title' => 'Wildan Blog'
+        'nama' => 'Wildan Blog'
     ]);
 });
 
 // Route + Controller Water Meter Page
 Route::get('/watermeter', [WaterMeterController::class, 'index']);
 
-Route::get('/valvecontrol', function () {
-    return view('valvecontrol', [
-        'title' => 'Valve Controller',
+// Route::get('/watermeter', function () {
+//     return view('watermeter', [
+//         "greeting" => "WELCOME TO OUR HOMEPAGE",
+//         "nama" => "Wildan",
+//         "title" => "ABOUT"
+//     ]);
+// });
+
+Route::get('/valve', function () {
+    return view('valve', [
+        'nama' => 'Valve Controller',
         'valve' => Pipa::all()
     ]);
 });
