@@ -12,6 +12,9 @@ class Record extends Model
 
     protected $guarded = ['id'];
 
+    //Eager Loading as to alleviate N + 1
+    protected $with = ['pipa'];
+
     public function pipa() {
         return $this->belongsTo(Pipa::class, 'idPipa');
     }

@@ -10,7 +10,7 @@ class WaterMeterController extends Controller
     public function index() {
         return view('watermeter', [
             'nama' => "USER",
-            "records" => Record::with(['pipa'])->get()
+            "records" => Record::get()
         ]);
     }
 
