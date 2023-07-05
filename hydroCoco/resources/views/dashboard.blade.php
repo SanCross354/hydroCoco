@@ -6,14 +6,15 @@
 <div class="bg-zinc-800 col-span-6 h-full ml-[1px]">
   <div class="p-4 gap-y-8">
     <div class="bg-white rounded-xl pb-4">
+
       <div class = "bg-white">
-        {{!! $chart->container() !!}}
+        {!! $chart->container() !!}
       </div>  
     </div>
     
-    <div class="bg-white rounded-xl pb-4">
-      <div class = "bg-white">
-        {{!! $chart2->container() !!}}
+    <div class="bg-white rounded-xl pb-4 mt-2">
+      <div>
+        {!! $chart2->container() !!}
       </div>  
     </div>
 

@@ -1,6 +1,6 @@
 <!-- sidebar -->
 <div class="col-span-3">
-  <div class="bg-zinc-800 shadow lg:h-screen p-4 gap-y-8 fixed">
+  <div class="bg-zinc-800 shadow lg:h-screen p-4 gap-y-8 lg:w-1/4 fixed">
     <div class="divide-none">
       <!-- logo start  -->
       <div class="space-y-1 divide-none flex p-2 w-60 ml-12">
