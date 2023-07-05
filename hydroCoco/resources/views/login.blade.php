@@ -13,7 +13,7 @@
 <div class="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-600 to-zinc-800 h-screen">
     <div class="flex justify-center h-screen">
 
-        {{-- Sisi Kiri --}}
+            {{-- Sisi Kiri --}}
         <div class="hidden bg-cover lg:block lg:w-2/3" style="background-image: url(img/ngalir.jpg)">
             <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                 <div>
@@ -31,16 +31,46 @@
                     <img src="img/logo2.png" alt="" class="w-96 pl-12" />
                   </span>
                 
+                  @if(session()->has('success'))
+    <div class="bg-green-500 text-white px-4 py-3 rounded relative" role="alert">
+        <span class="block sm:inline">{{ session('success') }}</span>
+        <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
+            <svg class="fill-current h-6 w-6 text-white" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 5.354 4.646a.5.5 0 0 0-.708.708L9.293 10l-4.647 4.646a.5.5 0 1 0 .708.708L10 10.707l4.646 4.647a.5.5 0 0 0 .708-.708L10.707 10l4.647-4.646a.5.5 0 0 0 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+    @endif
+    
+    @if(session()->has('loginError'))
+    <div class="bg-red-500 text-white px-4 py-3 rounded relative" role="alert">
+        <span class="block sm:inline">{{ session('loginError') }}</span>
+        <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
+            <svg class="fill-current h-6 w-6 text-white" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <title>Close</title>
+                <path d="M14.348 5.652a.5.5 0 0 0-.707 0L10 9.293 5.354 4.646a.5.5 0 0 0-.708.708L9.293 10l-4.647 4.646a.5.5 0 1 0 .708.708L10 10.707l4.646 4.647a.5.5 0 0 0 .708-.708L10.707 10l4.647-4.646a.5.5 0 0 0 0-.708z"/>
+            </svg>
+        </button>
+    </div>
+    @endif
+                
                 <div class="text-center">
                     <p class="mt-3 text-white font-extrabold text-4xl">LOGIN</p>
                 </div>
 
                 {{-- Masukkan Akun --}}
                 <div class="mt-3">
-                    <form>
+                    <form action="/login" method="post">
+                        @csrf
                         <div>
                             <label for="email" class="block mb-2 text-sm text-white">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Masukkan email" class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            <input type="email" name="email" id="email" placeholder="Masukkan email" value="{{old('email')}}" class="block w-full px-4 @error('email') is-invalid @enderror py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                            @error('email')
+                                <div class="invalid-feedback text-red-700 ">
+                                    {{$message}}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="mt-3">

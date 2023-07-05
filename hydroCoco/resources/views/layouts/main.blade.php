@@ -10,7 +10,7 @@
     @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
 <body class="bg-gray-950 font-poppins">
-<div class="grid grid-cols-12 items-start gap-0.5">
+<div class="lg:grid grid-cols-12 items-start gap-0.5 relative">
 
     @yield('container')
 </div>

@@ -1,6 +1,6 @@
 <!-- sidebar -->
 <div class="col-span-3">
-  <div class="bg-zinc-800 shadow lg:h-screen p-4 gap-y-8">
+  <div class="bg-zinc-800 shadow lg:h-screen p-4 gap-y-8 fixed">
     <div class="divide-none">
       <!-- logo start  -->
       <div class="space-y-1 divide-none flex p-2 w-60 ml-12">
@@ -15,7 +15,7 @@
         </div>
         <div class="pl-3">
           <p class="text-slate-700">Hello,</p>
-          <h4 class="text-black capitalize font-bold">{{ $nama }}</h4>
+          <h4 class="text-black capitalize font-bold">{{Auth::user()->name}}</h4>
         </div>
       </div>
       <!-- profile end -->
@@ -53,12 +53,10 @@
 
     <!-- Tombol Logout -->
     <div class="space-y-1 pl-10 py-5 hover:bg-lime-400 rounded-lg text-white hover:text-black font-medium hover:font-extrabold transition block">
-      <a href="" class="relative medium capitalize pl-3">
-        Logout
-        <span class="absolute -left-8 top-0 text-base">
-          <img src="img/logout.png" alt="" class="w-8" />
-        </span>
-      </a>
+      <form action="/logout" method="post">
+        @csrf
+        <button type="submit">LOG OUT</button>
+      </form>
     </div>
 
   </div>

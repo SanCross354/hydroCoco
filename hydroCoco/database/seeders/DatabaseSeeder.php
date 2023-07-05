@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Factories\RecordFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,6 +20,9 @@ class DatabaseSeeder extends Seeder
 
         //This callback for generating time that will be increased by 5 minutes
         //by utilising configure function that has been made in RecordFactory
+        
+        RecordFactory::resetUsedIds(); // Reset the used IDs before generating new records
+
         \App\Models\Record::factory(5)->configure()->create();
 
         // $max = 6;

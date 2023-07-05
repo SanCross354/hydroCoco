@@ -4,6 +4,8 @@ use App\Models\Record;
 use App\Models\Pipa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WaterMeterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,14 +33,16 @@ Route::get('/login', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard', [
-        'nama' => 'Wildan Blog'
-    ]);
-});
+//Guest -> hanya bisa diakses oleh orang yang blm terautentikasi
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
 
 // Route + Controller Water Meter Page
 Route::get('/watermeter', [WaterMeterController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 // Route::get('/watermeter', function () {
 //     return view('watermeter', [
