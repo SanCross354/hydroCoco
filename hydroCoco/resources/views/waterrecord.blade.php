@@ -3,25 +3,42 @@
 @section('container')
 @include('partials.sidebar')
 <div class="items-start col-span-9 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-600 to-zinc-800 h-screen">
-    @include('partials.header')
-
     {{-- Kotak Biru Terang --}}
-    <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-sky-50 rounded-lg flex">
 
-        {{-- Foto --}}
-        <div class="space-y-1">
-            <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
+    <div class="grid grid-cols-2">
+        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-sky-50 rounded-lg flex">
+
+            {{-- Foto --}}
+            <div class="space-y-1">
+                <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
+            </div>
+
+            {{-- Keterangan --}}
+            <div class="ml-8">
+                <h1 class="font-bold text-black">pH Air</h1>
+                <p class="font-semibold text-slate-700">Keterangan</p>
+                <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
+                <li class="font-normal">pH = 7 Sesuai standar.</li>
+            </div>
+        </div>
+        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-red-500 rounded-lg flex">
+
+            {{-- Foto --}}
+            <div class="space-y-1">
+                <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
+            </div>
+
+            {{-- Keterangan --}}
+            <div class="ml-8">
+                <h1 class="font-bold text-black">pH Air</h1>
+                <p class="font-semibold text-slate-700">Keterangan</p>
+                <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
+                <li class="font-normal">pH = 7 Sesuai standar.</li>
+            </div>
         </div>
 
-        {{-- Keterangan --}}
-        <div class="ml-8">
-            <h1 class="font-bold text-black">pH Air</h1>
-            <p class="font-semibold text-slate-700">Keterangan</p>
-            <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
-            <li class="font-normal">pH = 7 Sesuai standar.</li>
-        </div>
     </div>
-
+    
     {{-- Area Tombol Button --}}
     <div class="w-11/12 ml-10 pt-5 flex">
 

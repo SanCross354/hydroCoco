@@ -3,7 +3,7 @@
 use App\Models\Record;
 use App\Models\Pipa;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WaterMeterController;
+use App\Http\Controllers\WaterRecordController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 /*
@@ -41,7 +41,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 
 // Route + Controller Water Meter Page
-Route::get('/watermeter', [WaterMeterController::class, 'index']);
+Route::get('/waterrecord', [WaterRecordController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
 // Route::get('/watermeter', function () {
@@ -52,9 +52,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 //     ]);
 // });
 
-Route::get('/valve', function () {
-    return view('valve', [
-        'nama' => 'Valve Controller',
-        'valves' => Pipa::with(['user'])->get()
+Route::get('/wateralarm', function () {
+    return view('wateralarm', [
+        'nama' => 'Water Alarm',
+        'alarms' => Record::with(['pipa'])->get()
     ]);
 });

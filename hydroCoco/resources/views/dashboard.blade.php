@@ -3,7 +3,7 @@
 @section('container')
 @include('partials.sidebar')
 
-<div class="bg-zinc-800 col-span-6 h-full ml-[1px]">
+<div class="bg-zinc-800 col-span-9 h-full ml-[1px]">
   <div class="p-4 gap-y-8">
     <div class="bg-white rounded-xl pb-4">
 
@@ -380,123 +380,6 @@
     </script>
     <!-- chart end -->
   </div>
-</div>
-
-<div class="col-span-3 bg-zinc-800 h-full">
-  {{-- Message --}}
-  <div class="bg-lime-400 w-full h-16 rounded-lg">
-    <h1 class="text-black font-extrabold text-5xl text-center items-center">INBOX</h1>
-  </div>
-
-  {{-- Chatbox 1 --}}
-  <div class="mt-10 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men1.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Agus Susanto</p>
-          <p class="font-md text-slate-500">Halo pak! Saya baru saja menutup katup pipa untuk lokasi Yogyakarta</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 2 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men2.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Budi Santoso</p>
-          <p class="font-md text-slate-500">Lapor pak! Ada kebocoran pipa di daerah Condong Catur. Apakah saya harus
-            menutup katup pipanya?</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 3 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men3.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Muhammad Ivan</p>
-          <p class="font-md text-slate-500">Assalamu'alaikum Pak, saya baru saja selesai menginput kandungan air pipa
-            wilayah kaliurang :D</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 4 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men5.png" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Bayu Doremi</p>
-          <p class="font-md text-slate-500">Pak saya hari ini minta izin ndak masuk nggih, istri saya baru saja
-            melahirkan🙏</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 5 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men4.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Raka Gemblung</p>
-          <p class="font-md text-slate-500">Assalamu'alaikum Pak, ini saya mau otw ngecek pipa daerah Bantul >_< </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 6 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men6.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">David Coleman</p>
-          <p class="font-md text-slate-500">Hi Sir! I just arrived in Yogyakarta today, maybe tomorrow I will start work
-            as usual.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 7 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men7.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Agus Tamimi</p>
-          <p class="font-md text-slate-500">Pak izin istirahat nggih, laper aowkwkw</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {{-- Chatbox 8 --}}
-  <div class="mt-5 float-left pl-5">
-    <div class="group relative mx-auto w-80 overflow-hidden rounded-[16px] bg-gray-300 p-[1px]">
-      <div class="relative rounded-[15px] bg-white p-6">
-        <div class="space-y-4">
-          <img src="img/men8.jpg" alt="" class="w-16 rounded-full" />
-          <p class="text-lg font-bold text-slate-800">Reinhart Sumini</p>
-          <p class="font-md text-slate-500">Lapor bos! Kandungan air wilayah Godean aman terkendali! pH, debit, tekanan
-            semua bagus seperti yang diharapkan!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
 <script src="{{ $chart->cdn() }}"></script>
 <script src="{{ $chart2->cdn() }}"></script>

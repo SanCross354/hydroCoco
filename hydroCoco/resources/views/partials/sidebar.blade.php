@@ -33,8 +33,8 @@
 
     {{-- Tombol Water Meter --}}
     <div class="space-y-1 pl-10 py-5 hover:bg-lime-400 rounded-lg text-white hover:text-black font-medium hover:font-extrabold transition block">
-      <a href="/watermeter" class="relative medium capitalize pl-3">
-        Water Meter
+      <a href="/waterrecord" class="relative medium capitalize pl-3">
+        Water Record
         <span class="absolute -left-8  text-base">
           <img src="img/water.png" alt="" class="w-8" />
         </span>
@@ -43,8 +43,8 @@
 
     {{-- Tombol Valve Control --}}
     <div class="space-y-1 pl-10 py-5 hover:bg-lime-400 rounded-lg text-white hover:text-black font-medium hover:font-extrabold transition block">
-      <a href="/valve" class="relative medium capitalize pl-3">
-        Valve Control
+      <a href="/wateralarm" class="relative medium capitalize pl-3">
+        Water Alarm
         <span class="absolute -left-8  text-base">
           <img src="img/valve.png" alt="" class="w-8" />
         </span>

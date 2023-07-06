@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Record;
 
-class WaterMeterController extends Controller
+class WaterRecordController extends Controller
 {
     public function index() {
-        return view('watermeter', [
+        return view('waterrecord', [
             'nama' => "USER",
             "records" => Record::get()
         ]);

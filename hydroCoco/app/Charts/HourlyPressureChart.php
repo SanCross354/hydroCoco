@@ -15,7 +15,7 @@ class HourlyPressureChart
         $this->chart = $chart;
     }
 
-    public function build(): \ArielMejiaDev\LarapexCharts\BarChart
+    public function build(): \ArielMejiaDev\LarapexCharts\LineChart
     {
         $pipa1 = DB::table('records')
             ->select('tekanan', 'waktu')
@@ -66,7 +66,7 @@ class HourlyPressureChart
             $tekanan5Array[] = $firstPipa->tekanan; // Append the value to the array
         }
         
-        return $this->chart->barChart()
+        return $this->chart->lineChart()
             ->setTitle('Tekanan Air di 5 Kabupaten Provinsi DIY')
             ->setSubtitle('Wins during season 2021.')
             ->addData("Yogyakarta", $tekananArray) // Pass the array of values
