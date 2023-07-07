@@ -5,7 +5,7 @@
 <div class="items-start col-span-9 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-600 to-zinc-800 h-screen">
     {{-- Kotak Biru Terang --}}
 
-    <div class="grid grid-cols-2">
+    <div class="grid grid-cols-2 pb-4">
         <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-sky-50 rounded-lg flex">
 
             {{-- Foto --}}
@@ -21,8 +21,10 @@
                 <li class="font-normal">pH = 7 Sesuai standar.</li>
             </div>
         </div>
-        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-red-500 rounded-lg flex">
 
+        {{-- Accessing $collection --}}
+        @if($collection->isNotEmpty())
+        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-sky-50 rounded-lg flex">
             {{-- Foto --}}
             <div class="space-y-1">
                 <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
@@ -30,18 +32,30 @@
 
             {{-- Keterangan --}}
             <div class="ml-8">
-                <h1 class="font-bold text-black">pH Air</h1>
-                <p class="font-semibold text-slate-700">Keterangan</p>
-                <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
-                <li class="font-normal">pH = 7 Sesuai standar.</li>
+                <h1 class="font-bold text-black">You're Secure !</h1>
+                <h2 class="font-semibold text-slate-700">No Alerts</h2>
             </div>
         </div>
+        @else
+        <!-- Alert if there're problems -->
+        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-red-500 rounded-lg flex">
+                {{-- Foto --}}
+                <div class="space-y-1">
+                    <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
+                </div>
 
+                {{-- Keterangan --}}
+                <div class="ml-8">
+                    <h1 class="font-bold text-black">pH Air</h1>
+                    <p class="font-semibold text-slate-700">Keterangan</p>
+                    <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
+                    <li class="font-normal">pH = 7 Sesuai standar.</li>
+                </div>
+            </div> 
+        @endif
     </div>
-    
-    {{-- Area Tombol Button --}}
-    <div class="w-11/12 ml-10 pt-5 flex">
 
+    <div class="grid grid-cols-3 p-4">
         {{-- Tombol pH Air --}}
         <div class="bg-lime-400 hover:bg-sky-100 w-350 rounded-lg flex h-20 justify-between">
             <button class="px-4 py-2 text-2xl font-bold">pH Air</button>
@@ -72,6 +86,7 @@
             </div>
         </div>
     </div>
+    
     
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-6">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">

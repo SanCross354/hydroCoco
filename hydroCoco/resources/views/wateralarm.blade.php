@@ -2,7 +2,8 @@
 
 @section('container')
 @include('partials.sidebar')
-<div class="items-start col-span-9 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-600 to-zinc-800 h-screen">
+<div
+    class="items-start col-span-9 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-600 to-zinc-800 h-screen">
     @include('partials.header')
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-6">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -26,38 +27,45 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($alarms as $alarm)
-                @if(($alarm->pH < 7 || $alarm->pH > 8) && ($alarm->tekanan < 30 || $alarm->tekanan > 70))
-                    <?php $result = "pH dan Tekanan"; ?>
-                @elseif($alarm->pH < 7 || $alarm->pH > 8)
-                    <?php $result = "pH"; ?>
-                @else
-                    <?php $result = "tekanan"; ?>
-                @endif
 
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{$alarm->id}}
-                    </th>
-                    <td class="px-6 py-4">
-                        {{$alarm->pipa->lokasi}}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{$alarm->waktu}}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{$result}}
-                    </td>
-                    <td class="px-6 py-4">
-                        @if($result === 'pH dan Tekanan')
-                            <?php echo "Masalah yang ditemui yaitu pH dengan nilai {$alarm->pH} dan Tekanan sebesar {$alarm->tekanan} psi"?>
-                        @elseif($result === 'pH')
-                            <?php echo "Masalah yang ditemui yaitu pH dengan nilai {$alarm->pH}"?>
-                        @else
-                            <?php echo "Masalah yang ditemui yaitu Tekanan sebesar {$alarm->tekanan} psi"?>
-                        @endif  
-                    </td>
-                </tr>
+                @php
+                $count = 1; // Initialize the value of $key
+                @endphp
+
+                @foreach($collection as $item)
+
+                    <tr
+                        class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row"
+                            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ $count }} <!-- Incremental number starting from 1 -->
+                        </th>
+                        <td class="px-6 py-4">
+                            {{ $item['lokasi'] }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $item['waktu'] }}
+                        </td>
+                        <td class="px-6 py-4">
+                            {{ $item['result'] }}
+                        </td>
+                        <td class="px-6 py-4">
+                            <!-- Display specific problem based on the result -->
+                            @if($item['result'] === 'pH dan Tekanan')
+                            Masalah yang ditemui yaitu pH dengan nilai {{ $item['pH'] }} dan Tekanan sebesar
+                            {{ $item['tekanan'] }} psi
+                            @elseif($item['result'] === 'pH')
+                            Masalah yang ditemui yaitu pH dengan nilai {{ $item['pH'] }}
+                            @elseif($item['result'] === 'tekanan')
+                            Masalah yang ditemui yaitu Tekanan sebesar {{ $item['tekanan'] }} psi
+                            @else
+                            {{-- No problem --}}
+                            @endif
+                        </td>
+                    </tr>
+                    @php
+                    $count++; // Increment the value of $key
+                    @endphp
                 @endforeach
             </tbody>
         </table>

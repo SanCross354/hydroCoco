@@ -5,19 +5,19 @@
 
 <div class="bg-zinc-800 col-span-9 h-full ml-[1px]">
   <div class="p-4 gap-y-8">
-    <div class="bg-white rounded-xl pb-4">
-
-      <div class = "bg-white">
-        {!! $chart->container() !!}
-      </div>  
+    <div class="grid grid-cols-2">
+      <div class="bg-white rounded-xl">
+        <div class = "bg-white">
+          {!! $chart->container() !!}
+        </div>  
+      </div>
+      <div class="bg-white rounded-xl ml-2">
+        <div>
+          {!! $chart2->container() !!}
+        </div>  
     </div>
+  </div>
     
-    <div class="bg-white rounded-xl pb-4 mt-2">
-      <div>
-        {!! $chart2->container() !!}
-      </div>  
-    </div>
-
     <!-- chart start -->
     <div style="width: 300 ;height: 500">
       <canvas id="myChart"></canvas>
