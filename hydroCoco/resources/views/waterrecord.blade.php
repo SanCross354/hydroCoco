@@ -24,6 +24,22 @@
 
         {{-- Accessing $collection --}}
         @if($collection->isNotEmpty())
+        <!-- Alert if there're problems -->
+        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-red-500 rounded-lg flex">
+             {{-- Foto --}}
+            <div class="space-y-1">
+                <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
+            </div>
+
+            {{-- Keterangan --}}
+            <div class="ml-8">
+                <h1 class="font-bold text-black">pH Air</h1>
+                <p class="font-semibold text-slate-700">Keterangan</p>
+                <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
+                <li class="font-normal">pH = 7 Sesuai standar.</li>
+            </div>
+        </div> 
+        @else
         <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-sky-50 rounded-lg flex">
             {{-- Foto --}}
             <div class="space-y-1">
@@ -36,22 +52,6 @@
                 <h2 class="font-semibold text-slate-700">No Alerts</h2>
             </div>
         </div>
-        @else
-        <!-- Alert if there're problems -->
-        <div class="w-11/12 h-40 ml-10 mt-5 pt-5 pl-5 bg-red-500 rounded-lg flex">
-                {{-- Foto --}}
-                <div class="space-y-1">
-                    <img src="img/water2.png" alt="gambar air" class="w-28 rounded-full">
-                </div>
-
-                {{-- Keterangan --}}
-                <div class="ml-8">
-                    <h1 class="font-bold text-black">pH Air</h1>
-                    <p class="font-semibold text-slate-700">Keterangan</p>
-                    <li class="font-normal">pH > 7 / pH < 7 Tidak sesuai standar.</li>
-                    <li class="font-normal">pH = 7 Sesuai standar.</li>
-                </div>
-            </div> 
         @endif
     </div>
 

@@ -385,4 +385,18 @@
 <script src="{{ $chart2->cdn() }}"></script>
 {{ $chart->script() }}
 {{ $chart2->script() }}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>w
+
+@if(session('success'))
+    <script>
+        toastr.success('{{ session('success') }}', 'Notification');
+    </script>
+@endif
+@if(session('info'))
+    <script>
+        toastr.info('{{ session('info') }}', 'Notification');
+    </script>
+@endif
+
 @endsection
